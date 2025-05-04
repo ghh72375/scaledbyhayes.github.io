@@ -38,6 +38,7 @@ header .logo {
     font-weight: bold;
 }
 
+/* NAVIGATION: Two columns on mobile, row on desktop */
 header nav ul {
     padding: 0;
     margin: 0;
@@ -45,10 +46,28 @@ header nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 header nav ul li {
-    margin: 0.5rem 1rem;
+    flex: 0 0 50%;
+    box-sizing: border-box;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+@media screen and (min-width: 769px) {
+    header nav ul {
+        flex-wrap: nowrap;
+        max-width: none;
+    }
+    header nav ul li {
+        flex: 0 0 auto;
+        margin: 0.5rem 1rem;
+        text-align: center;
+    }
 }
 
 header nav ul li a {
@@ -310,15 +329,6 @@ footer .footer-links ul li a {
     header, footer {
         flex-direction: column;
         padding: 1rem;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        margin-top: 1rem;
-    }
-
-    header nav ul li {
-        margin: 0.5rem 0;
     }
 
     .hero {
